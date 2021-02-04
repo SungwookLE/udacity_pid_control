@@ -31,7 +31,9 @@ class PID {
    */
   double TotalError();
 
- private:
+  void Calculate_Control_Value(double &input);
+
+private:
   /**
    * PID Errors
    */
