@@ -39,7 +39,8 @@ int main() {
   /**
    * TODO: Initialize the pid variable.
    */
-  double Kp_steer=0.13,Kd_steer=.21,Ki_steer=0.002;
+  //double Kp_steer=0.13,Kd_steer=.21,Ki_steer=0.002;
+  double Kp_steer=0.17,Kd_steer=.5,Ki_steer=0.0002;
   double Kp_speed = 0.07, Kd_speed = 0.01, Ki_speed = 0;
   pid_steer.Init(Kp_steer, Ki_steer, Kd_steer);
   pid_speed.Init(Kp_speed, Ki_speed, Kd_speed);
@@ -77,7 +78,7 @@ int main() {
            */
           pid_steer.UpdateError(cte);
           pid_steer.Calculate_Control_Value(steer_value);
-
+          
           pid_speed.UpdateError(speed_err);
           pid_speed.Calculate_Control_Value(throttle_value);
 
